@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WITH LOVE, ENGLISH — Lesson 1: Aesthetic Morning Rituals</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            50: '#fdf2f3',
+                            100: '#fbe6e8',
+                            600: '#9b2226',
+                            800: '#6b141a',
+                            900: '#5a1217',
+                            950: '#38080b'
+                        },
+                        sand: {
+                            50: '#faf8f5',
+                            100: '#f7f4ef',
+                            200: '#f0ebe1',
+                            300: '#e2d7c5',
+                            400: '#c3b299'
+                        },
+                        charcoal: '#1a1a1a'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f7f4ef;
+            color: #1a1a1a;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        h1, h2, h3, h4, .font-serif-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f0ebe1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #6b141a;
+            border-radius: 3px;
+        }
+        .tab-active {
+            border-bottom: 3px solid #6b141a;
+            color: #6b141a;
+            font-weight: 600;
+        }
+        .image-card {
+            transition: all 0.3s ease;
+        }
+        .image-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(90, 18, 23, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-[#f0ebe1] border-b border-sand-300 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-burgundy-900 text-sand-100 flex items-center justify-center font-serif text-xl font-bold tracking-wider">
+                    WLE
+                </div>
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-burgundy-800 font-semibold block">WITH LOVE, ENGLISH</span>
+                    <h1 class="text-xl font-serif font-bold text-charcoal leading-none">Lesson 1: Aesthetic Morning Rituals</h1>
+                </div>
+            </div>
+            
+            <!-- Overall Progress -->
+            <div class="w-full sm:w-64 flex flex-col gap-1">
+                <div class="flex justify-between text-xs font-semibold text-burgundy-900">
+                    <span>Lesson Progress</span>
+                    <span id="overall-progress-text">0%</span>
+                </div>
+                <div class="w-full bg-sand-300 h-2.5 rounded-full overflow-hidden">
+                    <div id="overall-progress-bar" class="bg-burgundy-800 h-full w-0 transition-all duration-500"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div class="max-w-6xl mx-auto px-2 overflow-x-auto custom-scrollbar flex space-x-1 sm:space-x-4 text-xs sm:text-sm font-medium pt-2 border-t border-sand-300/50">
+            <button onclick="switchTab('warmup')" id="tab-warmup" class="tab-button tab-active px-3 py-2.5 whitespace-nowrap transition-all flex items-center gap-1.5">
+                <i class="fa-solid fa-mug-hot text-burgundy-800"></i> 1. Warm-up
+            </button>
+            <button onclick="switchTab('vocab')" id="tab-vocab" class="tab-button px-3 py-2.5 whitespace-nowrap transition-all text-gray-600 hover:text-burgundy-900 flex items-center gap-1.5">
+                <i class="fa-solid fa-book-open text-burgundy-800"></i> 2. Vocabulary
+            </button>
+            <button onclick="switchTab('practice')" id="tab-practice" class="tab-button px-3 py-2.5 whitespace-nowrap transition-all text-gray-600 hover:text-burgundy-900 flex items-center gap-1.5">
+                <i class="fa-solid fa-pen-ruler text-burgundy-800"></i> 3. Vocab Practice
+            </button>
+            <button onclick="switchTab('reading')" id="tab-reading" class="tab-button px-3 py-2.5 whitespace-nowrap transition-all text-gray-600 hover:text-burgundy-900 flex items-center gap-1.5">
+                <i class="fa-solid fa-[#6b141a] fa-newspaper text-burgundy-800"></i> 4. Reading
+            </button>
+            <button onclick="switchTab('grammar')" id="tab-grammar" class="tab-button px-3 py-2.5 whitespace-nowrap transition-all text-gray-600 hover:text-burgundy-900 flex items-center gap-1.5">
+                <i class="fa-solid fa-spell-check text-burgundy-800"></i> 5. Grammar
+            </button>
+            <button onclick="switchTab('speaking')" id="tab-speaking" class="tab-button px-3 py-2.5 whitespace-nowrap transition-all text-gray-600 hover:text-burgundy-900 flex items-center gap-1.5">
+                <i class="fa-solid fa-comments text-burgundy-800"></i> 6. Speaking
+            </button>
+            <button onclick="switchTab('creative')" id="tab-creative" class="tab-button px-3 py-2.5 whitespace-nowrap transition-all text-gray-600 hover:text-burgundy-900 flex items-center gap-1.5">
+                <i class="fa-solid fa-wand-magic-sparkles text-burgundy-800"></i> 7. Creative Task
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full">
+
+        <!-- SECTION 1: WARM-UP -->
+        <section id="section-warmup" class="tab-content block space-y-8">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-sand-300">
+                <div class="border-b border-sand-200 pb-4 mb-6">
+                    <span class="text-xs uppercase tracking-widest text-burgundy-800 font-bold">Part 1 • 5 Minutes</span>
+                    <h2 class="text-3xl font-serif font-bold text-burgundy-900 mt-1">Warm-up & Aesthetic Moodboard</h2>
+                    <p class="text-gray-600 text-sm mt-1">Select your ideal morning aesthetic below to unlock the discussion prompts.</p>
+                </div>
+
+                <!-- Moodboard Selection -->
+                <h3 class="text-lg font-serif font-bold text-charcoal mb-3">Choose your ideal morning vibe:</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <!-- Image Option 1 -->
+                    <div onclick="selectMood(1)" id="mood-1" class="image-card cursor-pointer rounded-xl overflow-hidden border-2 border-transparent bg-sand-100 p-2 text-center group">
+                        <div class="aspect-[4/5] rounded-lg overflow-hidden mb-2 relative">
+                            <img src="/Users/dalizedergausova/Downloads/IMG_9313.JPG" alt="Skincare Eye Patches Routine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <span class="text-xs font-semibold text-burgundy-900">1. Skincare & Glow</span>
+                    </div>
+
+                    <!-- Image Option 2 -->
+                    <div onclick="selectMood(2)" id="mood-2" class="image-card cursor-pointer rounded-xl overflow-hidden border-2 border-transparent bg-sand-100 p-2 text-center group">
+                        <div class="aspect-[4/5] rounded-lg overflow-hidden mb-2 relative">
+                            <img src="/Users/dalizedergausova/Downloads/IMG_9315.JPG" alt="Relaxing Bath with Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <span class="text-xs font-semibold text-burgundy-900">2. Bath & Slow Reading</span>
+                    </div>
+
+                    <!-- Image Option 3 -->
+                    <div onclick="selectMood(3)" id="mood-3" class="image-card cursor-pointer rounded-xl overflow-hidden border-2 border-transparent bg-sand-100 p-2 text-center group">
+                        <div class="aspect-[4/5] rounded-lg overflow-hidden mb-2 relative">
+                            <img src="/Users/dalizedergausova/Downloads/IMG_9316.JPG" alt="Cozy Work & Laptop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <span class="text-xs font-semibold text-burgundy-900">3. Cozy Work & Coffee</span>
+                    </div>
+
+                    <!-- Image Option 4 -->
+                    <div onclick="selectMood(4)" id="mood-4" class="image-card cursor-pointer rounded-xl overflow-hidden border-2 border-transparent bg-sand-100 p-2 text-center group">
+                        <div class="aspect-[4/5] rounded-lg overflow-hidden mb-2 relative">
+                            <img src="/Users/dalizedergausova/Downloads/IMG_9337.JPG" alt="Morning yoga/pilates" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <span class="text-xs font-semibold text-burgundy-900">4. Morning yoga/pilates</span>
+                    </div>
+                </div>
+
+                <!-- Discussion Questions -->
+                <div class="bg-sand-100 rounded-xl p-6 border border-sand-300">
+                    <h3 class="text-xl font-serif font-bold text-burgundy-900 mb-4 flex items-center gap-2">
+                        <i class="fa-regular fa-comment-dots"></i> Morning Warm-up Questions
+                    </h3>
+                    <ul class="space-y-4 text-sm sm:text-base">
+                        <li class="flex items-start gap-3">
+                            <span class="bg-burgundy-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                            <div>
+                                <strong>Which picture above best describes your perfect morning?</strong>
+                                <p class="text-gray-600 text-xs sm:text-sm mt-0.5">Example: "Picture 2 describes my morning best because I love taking slow baths on weekends."</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-burgundy-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                            <div>
+                                <strong>What time do you usually wake up during the week?</strong>
+                                <p class="text-gray-600 text-xs sm:text-sm mt-0.5">Example: "I usually wake up at 7:00 AM."</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-burgundy-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                            <div>
+                                <strong>Do you have a specific skincare routine or morning habit?</strong>
+                                <p class="text-gray-600 text-xs sm:text-sm mt-0.5">Example: "Yes, I apply eye patches and drink warm lemon water."</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <label for="warmup-notes" class="block text-xs uppercase font-bold text-burgundy-900 mb-2">Your Morning Notes / Ideas:</label>
+                        <textarea id="warmup-notes" placeholder="Type your answers here to practice writing..." class="w-full p-3 rounded-lg border border-sand-300 focus:outline-none focus:ring-2 focus:ring-burgundy-800 text-sm bg-white" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-end">
+                    <button onclick="markWarmupComplete()" class="bg-burgundy-900 hover:bg-burgundy-800 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all shadow-sm flex items-center gap-2">
+                        Complete Warm-up & Continue <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: VOCABULARY & WORD FORMATION -->
+        <section id="section-vocab" class="tab-content hidden space-y-8">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-sand-300">
+                <div class="border-b border-sand-200 pb-4 mb-6">
+                    <span class="text-xs uppercase tracking-widest text-burgundy-800 font-bold">Part 2 • 15 Minutes</span>
+                    <h2 class="text-3xl font-serif font-bold text-burgundy-900 mt-1">Essential Vocabulary & Word Formation</h2>
+                    <p class="text-gray-600 text-sm mt-1">Listen to the audio pronunciations and learn essential morning routine collocations.</p>
+                </div>
+
+                <!-- Vocabulary Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                    <!-- Vocab 1 -->
+                    <div class="bg-sand-50 rounded-xl p-4 border border-sand-300 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider font-bold text-burgundy-800">Verb / Noun</span>
+                                <h3 class="text-lg font-serif font-bold text-charcoal">Hydrate</h3>
+                            </div>
+                            <button onclick="speakText('Hydrate')" class="w-8 h-8 rounded-full bg-sand-200 text-burgundy-900 hover:bg-burgundy-800 hover:text-white flex items-center justify-center transition-colors" title="Listen Pronunciation">
+                                <i class="fa-solid fa-volume-high text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs font-mono text-gray-500 mb-2">/ˈhaɪ.dreɪt/</p>
+                        <p class="text-sm text-gray-700 mb-2">To add water or moisture to your skin or body.</p>
+                        <div class="bg-white p-2 rounded text-xs text-burgundy-900 font-medium italic border border-sand-200">
+                            "I hydrate my skin with a gentle serum every morning."
+                        </div>
+                    </div>
+
+                    <!-- Vocab 2 -->
+                    <div class="bg-sand-50 rounded-xl p-4 border border-sand-300 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider font-bold text-burgundy-800">Noun</span>
+                                <h3 class="text-lg font-serif font-bold text-charcoal">Eye Patches</h3>
+                            </div>
+                            <button onclick="speakText('Eye patches')" class="w-8 h-8 rounded-full bg-sand-200 text-burgundy-900 hover:bg-burgundy-800 hover:text-white flex items-center justify-center transition-colors" title="Listen Pronunciation">
+                                <i class="fa-solid fa-volume-high text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs font-mono text-gray-500 mb-2">/aɪ pætʃ.ɪz/</p>
+                        <p class="text-sm text-gray-700 mb-2">Hydrogel masks placed under the eyes to reduce puffiness.</p>
+                        <div class="bg-white p-2 rounded text-xs text-burgundy-900 font-medium italic border border-sand-200">
+                            "She puts on pink eye patches while drinking herbal tea."
+                        </div>
+                    </div>
+
+                    <!-- Vocab 3 -->
+                    <div class="bg-sand-50 rounded-xl p-4 border border-sand-300 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider font-bold text-burgundy-800">Noun Phrase</span>
+                                <h3 class="text-lg font-serif font-bold text-charcoal">Skincare Routine</h3>
+                            </div>
+                            <button onclick="speakText('Skincare routine')" class="w-8 h-8 rounded-full bg-sand-200 text-burgundy-900 hover:bg-burgundy-800 hover:text-white flex items-center justify-center transition-colors" title="Listen Pronunciation">
+                                <i class="fa-solid fa-volume-high text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs font-mono text-gray-500 mb-2">/ˈskɪn.keər ruːˈtiːn/</p>
+                        <p class="text-sm text-gray-700 mb-2">A regular set of steps to care for your face skin.</p>
+                        <div class="bg-white p-2 rounded text-xs text-burgundy-900 font-medium italic border border-sand-200">
+                            "Her morning skincare routine takes only ten minutes."
+                        </div>
+                    </div>
+
+                    <!-- Vocab 4 -->
+                    <div class="bg-sand-50 rounded-xl p-4 border border-sand-300 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider font-bold text-burgundy-800">Adjective</span>
+                                <h3 class="text-lg font-serif font-bold text-charcoal">Cozy</h3>
+                            </div>
+                            <button onclick="speakText('Cozy')" class="w-8 h-8 rounded-full bg-sand-200 text-burgundy-900 hover:bg-burgundy-800 hover:text-white flex items-center justify-center transition-colors" title="Listen Pronunciation">
+                                <i class="fa-solid fa-volume-high text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs font-mono text-gray-500 mb-2">/ˈkəʊ.zi/</p>
+                        <p class="text-sm text-gray-700 mb-2">Giving a feeling of comfort, warmth, and relaxation.</p>
+                        <div class="bg-white p-2 rounded text-xs text-burgundy-900 font-medium italic border border-sand-200">
+                            "I love wearing a cozy knit suit at home in the morning."
+                        </div>
+                    </div>
+
+                    <!-- Vocab 5 -->
+                    <div class="bg-sand-50 rounded-xl p-4 border border-sand-300 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider font-bold text-burgundy-800">Verb / Noun</span>
+                                <h3 class="text-lg font-serif font-bold text-charcoal">Glow</h3>
+                            </div>
+                            <button onclick="speakText('Glow')" class="w-8 h-8 rounded-full bg-sand-200 text-burgundy-900 hover:bg-burgundy-800 hover:text-white flex items-center justify-center transition-colors" title="Listen Pronunciation">
+                                <i class="fa-solid fa-volume-high text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs font-mono text-gray-500 mb-2">/ɡləʊ/</p>
+                        <p class="text-sm text-gray-700 mb-2">A healthy, bright, and radiant appearance of the skin.</p>
+                        <div class="bg-white p-2 rounded text-xs text-burgundy-900 font-medium italic border border-sand-200">
+                            "Good hydration gives your skin a natural glow."
+                        </div>
+                    </div>
+
+                    <!-- Vocab 6 -->
+                    <div class="bg-sand-50 rounded-xl p-4 border border-sand-300 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider font-bold text-burgundy-800">Noun</span>
+                                <h3 class="text-lg font-serif font-bold text-charcoal">Ritual</h3>
+                            </div>
+                            <button onclick="speakText('Ritual')" class="w-8 h-8 rounded-full bg-sand-200 text-burgundy-900 hover:bg-burgundy-800 hover:text-white flex items-center justify-center transition-colors" title="Listen Pronunciation">
+                                <i class="fa-solid fa-volume-high text-xs"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs font-mono text-gray-500 mb-2">/ˈrɪtʃ.u.əl/</p>
+                        <p class="text-sm text-gray-700 mb-2">A meaningful set of actions performed regularly.</p>
+                        <div class="bg-white p-2 rounded text-xs text-burgundy-900 font-medium italic border border-sand-200">
+                            "Lighting a candle is part of my calm morning ritual."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Word Formation Practice Section -->
+                <div class="bg-sand-100 rounded-xl p-6 border border-sand-300">
+                    <h3 class="text-xl font-serif font-bold text-burgundy-900 mb-2">Word Formation Focus</h3>
+                    <p class="text-xs sm:text-sm text-gray-600 mb-4">Learn how base words change parts of speech (Verb → Noun / Adjective → Adverb / Noun):</p>
+                    
+                    <div class="overflow-x-auto mb-6">
+                        <table class="w-full text-left text-xs sm:text-sm bg-white rounded-lg overflow-hidden shadow-sm">
+                            <thead class="bg-burgundy-900 text-white font-serif">
+                                <tr>
+                                    <th class="p-3">Verb / Root</th>
+                                    <th class="p-3">Noun</th>
+                                    <th class="p-3">Adjective</th>
+                                    <th class="p-3">Adverb</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-sand-200 text-gray-700">
+                                <tr>
+                                    <td class="p-3 font-semibold">Hydrate</td>
+                                    <td class="p-3 text-burgundy-800 font-bold">Hydration</td>
+                                    <td class="p-3">Hydrated</td>
+                                    <td class="p-3 text-gray-400">—</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold">—</td>
+                                    <td class="p-3">Calmness</td>
+                                    <td class="p-3 text-burgundy-800 font-bold">Calm</td>
+                                    <td class="p-3">Calmly</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold">—</td>
+                                    <td class="p-3 text-burgundy-800 font-bold">Gentleness</td>
+                                    <td class="p-3">Gentle</td>
+                                    <td class="p-3 text-burgundy-800 font-bold">Gently</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Quick Word Formation Exercise -->
+                    <div class="space-y-4 bg-white p-4 rounded-lg border border-sand-200">
+                        <h4 class="font-serif font-bold text-burgundy-900">Task: Complete the missing word forms</h4>
+                        
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-sm border-b border-sand-100 pb-2">
+                            <span>1. Drink water for better skin <strong>(HYDRATE)</strong>:</span>
+                            <input type="text" id="wf-1" placeholder="Type answer..." class="px-3 py-1.5 border border-sand-300 rounded text-sm focus:ring-1 focus:ring-burgundy-800 focus:outline-none w-full sm:w-48">
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-sm border-b border-sand-100 pb-2">
+                            <span>2. Apply the face cream very <strong>(GENTLE)</strong>:</span>
+                            <input type="text" id="wf-2" placeholder="Type answer..." class="px-3 py-1.5 border border-sand-300 rounded text-sm focus:ring-1 focus:ring-burgundy-800 focus:outline-none w-full sm:w-48">
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-sm border-b border-sand-100 pb-2">
+                            <span>3. I enjoy the <strong>(CALM)</strong> of early morning:</span>
+                            <input type="text" id="wf-3" placeholder="Type answer..." class="px-3 py-1.5 border border-sand-300 rounded text-sm focus:ring-1 focus:ring-burgundy-800 focus:outline-none w-full sm:w-48">
+                        </div>
+
+                        <div class="flex justify-between items-center pt-2">
+                            <span id="wf-feedback" class="text-xs font-semibold"></span>
+                            <button onclick="checkWordFormation()" class="bg-burgundy-800 hover:bg-burgundy-900 text-white text-xs px-4 py-2 rounded font-medium transition-colors">
+                                Check Word Formation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button onclick="switchTab('warmup')" class="bg-sand-200 hover:bg-sand-300 text-charcoal px-5 py-2.5 rounded-lg font-medium text-sm transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Previous
+                    </button>
+                    <button onclick="switchTab('practice')" class="bg-burgundy-900 hover:bg-burgundy-800 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all shadow-sm flex items-center gap-2">
+                        Next: Vocabulary Practice <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: VOCABULARY PRACTICE -->
+        <section id="section-practice" class="tab-content hidden space-y-8">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-sand-300">
+                <div class="border-b border-sand-200 pb-4 mb-6">
+                    <span class="text-xs uppercase tracking-widest text-burgundy-800 font-bold">Part 3 • 10 Minutes</span>
+                    <h2 class="text-3xl font-serif font-bold text-burgundy-900 mt-1">Vocabulary Interactive Practice</h2>
+                    <p class="text-gray-600 text-sm mt-1">Test your vocabulary understanding through interactive matching and sentence completion.</p>
+                </div>
+
+                <!-- Exercise 1: Matching Collocations -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-serif font-bold text-burgundy-900 mb-3">Task A: Match the Collocations</h3>
+                    <p class="text-xs text-gray-600 mb-4">Select the correct matching end for each morning routine phrase:</p>
+
+                    <div class="space-y-3">
+                        <!-- Match 1 -->
+                        <div class="flex flex-col sm:flex-row items-center gap-3 bg-sand-50 p-3 rounded-lg border border-sand-200">
+                            <span class="font-medium text-sm w-full sm:w-1/2">1. Apply pink under-eye...</span>
+                            <select id="match-1" class="w-full sm:w-1/2 p-2 border border-sand-300 rounded text-sm bg-white focus:ring-1 focus:ring-burgundy-800">
+                                <option value="">-- Choose Option --</option>
+                                <option value="patches">patches</option>
+                                <option value="suit">suit</option>
+                                <option value="water">water</option>
+                                <option value="glow">glow</option>
+                            </select>
+                        </div>
+
+                        <!-- Match 2 -->
+                        <div class="flex flex-col sm:flex-row items-center gap-3 bg-sand-50 p-3 rounded-lg border border-sand-200">
+                            <span class="font-medium text-sm w-full sm:w-1/2">2. Wear a cozy knit...</span>
+                            <select id="match-2" class="w-full sm:w-1/2 p-2 border border-sand-300 rounded text-sm bg-white focus:ring-1 focus:ring-burgundy-800">
+                                <option value="">-- Choose Option --</option>
+                                <option value="patches">patches</option>
+                                <option value="suit">suit</option>
+                                <option value="water">water</option>
+                                <option value="glow">glow</option>
+                            </select>
+                        </div>
+
+                        <!-- Match 3 -->
+                        <div class="flex flex-col sm:flex-row items-center gap-3 bg-sand-50 p-3 rounded-lg border border-sand-200">
+                            <span class="font-medium text-sm w-full sm:w-1/2">3. Hydrate your body with fresh...</span>
+                            <select id="match-3" class="w-full sm:w-1/2 p-2 border border-sand-300 rounded text-sm bg-white focus:ring-1 focus:ring-burgundy-800">
+                                <option value="">-- Choose Option --</option>
+                                <option value="patches">patches</option>
+                                <option value="suit">suit</option>
+                                <option value="water">water</option>
+                                <option value="glow">glow</option>
+                            </select>
+                        </div>
+
+                        <!-- Match 4 -->
+                        <div class="flex flex-col sm:flex-row items-center gap-3 bg-sand-50 p-3 rounded-lg border border-sand-200">
+                            <span class="font-medium text-sm w-full sm:w-1/2">4. Give skin a healthy natural...</span>
+                            <select id="match-4" class="w-full sm:w-1/2 p-2 border border-sand-300 rounded text-sm bg-white focus:ring-1 focus:ring-burgundy-800">
+                                <option value="">-- Choose Option --</option>
+                                <option value="patches">patches</option>
+                                <option value="suit">suit</option>
+                                <option value="water">water</option>
+                                <option value="glow">glow</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise 2: Sentence Fill-in-the-Blanks -->
+                <div class="mb-6">
+                    <h3 class="text-xl font-serif font-bold text-burgundy-900 mb-3">Task B: Fill in the Blanks</h3>
+                    <p class="text-xs text-gray-600 mb-4">Complete sentences using: <em>ritual, cozy, skincare, eye patches</em></p>
+
+                    <div class="space-y-4 bg-sand-100 p-5 rounded-xl border border-sand-300">
+                        <div class="text-sm">
+                            1. After waking up, I start my morning 
+                            <input type="text" id="blank-1" placeholder="word" class="px-2 py-1 mx-1 border border-sand-300 rounded w-28 text-center text-sm font-semibold"> 
+                            by putting on a warm bathrobe.
+                        </div>
+
+                        <div class="text-sm">
+                            2. She puts hydrogel 
+                            <input type="text" id="blank-2" placeholder="word" class="px-2 py-1 mx-1 border border-sand-300 rounded w-28 text-center text-sm font-semibold"> 
+                            under her eyes to refresh her face.
+                        </div>
+
+                        <div class="text-sm">
+                            3. Sitting in a 
+                            <input type="text" id="blank-3" placeholder="word" class="px-2 py-1 mx-1 border border-sand-300 rounded w-28 text-center text-sm font-semibold"> 
+                            armchair with a cup of coffee is my favorite routine.
+                        </div>
+
+                        <div class="text-sm">
+                            4. Her quick 
+                            <input type="text" id="blank-4" placeholder="word" class="px-2 py-1 mx-1 border border-sand-300 rounded w-28 text-center text-sm font-semibold"> 
+                            routine includes moisturizer and lips balm.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback & Validation Buttons -->
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-4 bg-sand-50 p-4 rounded-xl border border-sand-200">
+                    <div id="practice-feedback" class="text-sm font-bold text-burgundy-900"></div>
+                    <button onclick="checkPracticeExercises()" class="bg-burgundy-800 hover:bg-burgundy-900 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all shadow-sm">
+                        Check Practice Answers
+                    </button>
+                </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button onclick="switchTab('vocab')" class="bg-sand-200 hover:bg-sand-300 text-charcoal px-5 py-2.5 rounded-lg font-medium text-sm transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Previous
+                    </button>
+                    <button onclick="switchTab('reading')" class="bg-burgundy-900 hover:bg-burgundy-800 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all shadow-sm flex items-center gap-2">
+                        Next: Reading & Tasks <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: READING -->
+        <section id="section-reading" class="tab-content hidden space-y-8">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-sand-300">
+                <div class="border-b border-sand-200 pb-4 mb-6">
+                    <span class="text-xs uppercase tracking-widest text-burgundy-800 font-bold">Part 4 • 15 Minutes</span>
+                    <h2 class="text-3xl font-serif font-bold text-burgundy-900 mt-1">Reading: Hailey Bieber's Aesthetic Morning Routine</h2>
+                    <p class="text-gray-600 text-sm mt-1">Read the article about Hailey Bieber's morning skincare rituals and answer comprehension questions.</p>
+                </div>
+
+                <!-- Reading Layout: Text + Uploaded Images -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- Text Column -->
+                    <div class="lg:col-span-2 space-y-4 text-gray-800 leading-relaxed text-sm sm:text-base font-serif">
+                        <div class="bg-sand-50 p-6 rounded-xl border border-sand-200">
+                            <h3 class="text-2xl font-serif font-bold text-burgundy-900 mb-3 border-b border-sand-300 pb-2">
+                                Hailey Bieber's Morning Rituals & Rhode Skincare
+                            </h3>
+                            <p class="mb-3">
+                                Model and entrepreneur Hailey Bieber is famous for her aesthetic lifestyle and radiant skin. Many people want to know how she starts her day to look so fresh and organized.
+                            </p>
+                            <p class="mb-3">
+                                Hailey usually wakes up early at around 7:30 AM. First, she drinks a large glass of warm water to <strong>hydrate</strong> her body. Next, she begins her signature <strong>skincare routine</strong>. She applies hydrogel <strong>eye patches</strong> to gently soothe her face and reduce morning puffiness.
+                            </p>
+                            <p class="mb-3">
+                                After washing her face, she applies glaze fluid and moisturizer from her beauty brand, <em>Rhode</em>. She believes that gentleness is key: she smoothly massages products into her skin to create a natural <strong>glow</strong>.
+                            </p>
+                            <p>
+                                When working from home, Hailey prefers wearing a <strong>cozy</strong> lounge set or knit outfit. While taking time for herself, she listens to calm music, drinks coffee, or writes in her daily notebook. For Hailey, mornings are not rushed; they are a peaceful <strong>ritual</strong> to prepare for a successful day.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Side Gallery featuring original photos -->
+                    <div class="space-y-4">
+                        <div class="rounded-xl overflow-hidden border border-sand-300 shadow-sm">
+                            <img src="/Users/dalizedergausova/Downloads/IMG_9338.JPG" alt="Hailey Bieber Eye Patches" class="w-full h-48 object-cover">
+                            <div class="bg-sand-100 p-2 text-center text-xs font-serif italic text-burgundy-900">
+                                Hailey's iconic morning eye patches
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Reading Exercises -->
+                <div class="space-y-6 bg-sand-100 p-6 rounded-xl border border-sand-300">
+                    <h3 class="text-xl font-serif font-bold text-burgundy-900">Reading Comprehension Tasks</h3>
+
+                    <!-- Task 1: True / False -->
+                    <div>
+                        <h4 class="font-bold text-sm text-charcoal mb-3">1. True or False? Select the correct statement:</h4>
+                        
+                        <div class="space-y-3">
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center bg-white p-3 rounded border border-sand-200 text-sm gap-2">
+                                <span>A. Hailey wakes up at 9:30 AM every morning.</span>
+                                <div class="space-x-2">
+                                    <button onclick="setTF(1, 'true', this)" class="tf-btn-1 border border-sand-300 px-3 py-1 rounded text-xs">True</button>
+                                    <button onclick="setTF(1, 'false', this)" class="tf-btn-1 border border-sand-300 px-3 py-1 rounded text-xs">False</button>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center bg-white p-3 rounded border border-sand-200 text-sm gap-2">
+                                <span>B. She drinks warm water to hydrate her body.</span>
+                                <div class="space-x-2">
+                                    <button onclick="setTF(2, 'true', this)" class="tf-btn-2 border border-sand-300 px-3 py-1 rounded text-xs">True</button>
+                                    <button onclick="setTF(2, 'false', this)" class="tf-btn-2 border border-sand-300 px-3 py-1 rounded text-xs">False</button>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-center bg-white p-3 rounded border border-sand-200 text-sm gap-2">
+                                <span>C. Hailey likes rushing through her morning routine quickly.</span>
+                                <div class="space-x-2">
+                                    <button onclick="setTF(3, 'true', this)" class="tf-btn-3 border border-sand-300 px-3 py-1 rounded text-xs">True</button>
+                                    <button onclick="setTF(3, 'false', this)" class="tf-btn-3 border border-sand-300 px-3 py-1 rounded text-xs">False</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Task 2: Multiple Choice -->
+                    <div>
+                        <h4 class="font-bold text-sm text-charcoal mb-2">2. Multiple Choice: Why does Hailey wear eye patches?</h4>
+                        <div class="space-y-2 text-sm bg-white p-4 rounded-lg border border-sand-200">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="mcq" value="a" class="accent-burgundy-800">
+                                <span>To change her eye color</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="mcq" value="b" class="accent-burgundy-800">
+                                <span>To soothe her face and reduce morning puffiness</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="mcq" value="c" class="accent-burgundy-800">
+                                <span>To protect her eyes from laptop screen light</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Check Reading Button -->
+                    <div class="flex justify-between items-center pt-2">
+                        <span id="reading-feedback" class="text-sm font-bold text-burgundy-900"></span>
+                        <button onclick="checkReadingTasks()" class="bg-burgundy-800 hover:bg-burgundy-900 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all shadow-sm">
+                            Check Reading Answers
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button onclick="switchTab('practice')" class="bg-sand-200 hover:bg-sand-300 text-charcoal px-5 py-2.5 rounded-lg font-medium text-sm transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Previous
+                    </button>
+                    <button onclick="switchTab('grammar')" class="bg-burgundy-900 hover:bg-burgundy-800 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all shadow-sm flex items-center gap-2">
+                        Next: Grammar Practice <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: GRAMMAR -->
+        <section id="section-grammar" class="tab-content hidden space-y-8">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-sand-300">
+                <div class="border-b border-sand-200 pb-4 mb-6">
+                    <span class="text-xs uppercase tracking-widest text-burgundy-800 font-bold">Part 5 • 10 Minutes</span>
+                    <h2 class="text-3xl font-serif font-bold text-burgundy-900 mt-1">Grammar: Present Simple vs. Present Continuous</h2>
+                    <p class="text-gray-600 text-sm mt-1">Master routines (Present Simple) vs. actions happening right now (Present Continuous).</p>
+                </div>
+
+                <!-- Explanation Boxes -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- Present Simple -->
+                    <div class="bg-sand-50 p-5 rounded-xl border border-sand-300">
+                        <span class="bg-burgundy-800 text-white text-xs px-2.5 py-1 rounded font-bold uppercase tracking-wider">Present Simple</span>
+                        <h3 class="text-xl font-serif font-bold text-burgundy-900 mt-2 mb-2">Daily Habits & Routines</h3>
+                        <p class="text-xs text-gray-600 mb-3">Use for repeated daily actions, habits, or general truths.</p>
+                        
+                        <div class="space-y-2 text-xs sm:text-sm bg-white p-3 rounded border border-sand-200">
+                            <p><strong>Signal words:</strong> usually, every day, always, often, normally</p>
+                            <p class="text-burgundy-900 font-medium italic">"I <strong>drink</strong> warm water every morning."</p>
+                            <p class="text-burgundy-900 font-medium italic">"She <strong>applies</strong> eye patches every day."</p>
+                        </div>
+                    </div>
+
+                    <!-- Present Continuous -->
+                    <div class="bg-sand-50 p-5 rounded-xl border border-sand-300">
+                        <span class="bg-burgundy-800 text-white text-xs px-2.5 py-1 rounded font-bold uppercase tracking-wider">Present Continuous</span>
+                        <h3 class="text-xl font-serif font-bold text-burgundy-900 mt-2 mb-2">Current Actions</h3>
+                        <p class="text-xs text-gray-600 mb-3">Use for actions happening right now at the moment of speaking (am/is/are + verb-ing).</p>
+                        
+                        <div class="space-y-2 text-xs sm:text-sm bg-white p-3 rounded border border-sand-200">
+                            <p><strong>Signal words:</strong> now, right now, at the moment, look!</p>
+                            <p class="text-burgundy-900 font-medium italic">"Right now, she <strong>is reading</strong> a book in the bath."</p>
+                            <p class="text-burgundy-900 font-medium italic">"Look! She <strong>is wearing</strong> a cozy cardigan."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Grammar Exercises -->
+                <div class="bg-sand-100 p-6 rounded-xl border border-sand-300 space-y-4">
+                    <h3 class="text-xl font-serif font-bold text-burgundy-900">Grammar Exercises</h3>
+                    <p class="text-xs text-gray-600">Choose the correct verb tense form for each sentence:</p>
+
+                    <div class="space-y-4 bg-white p-4 rounded-lg border border-sand-200 text-sm">
+                        <!-- Q1 -->
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-sand-100 pb-3">
+                            <span>1. Every morning, Hailey (wake) up at 7:30 AM.</span>
+                            <select id="g-1" class="p-2 border border-sand-300 rounded bg-sand-50 text-xs font-semibold focus:ring-1 focus:ring-burgundy-800">
+                                <option value="">-- Select Tense --</option>
+                                <option value="wakes">wakes</option>
+                                <option value="is waking">is waking</option>
+                            </select>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-sand-100 pb-3">
+                            <span>2. Look at the photo! She (sit) in a comfortable armchair right now.</span>
+                            <select id="g-2" class="p-2 border border-sand-300 rounded bg-sand-50 text-xs font-semibold focus:ring-1 focus:ring-burgundy-800">
+                                <option value="">-- Select Tense --</option>
+                                <option value="sits">sits</option>
+                                <option value="is sitting">is sitting</option>
+                            </select>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-sand-100 pb-3">
+                            <span>3. I usually (hydrate) my skin before applying makeup.</span>
+                            <select id="g-3" class="p-2 border border-sand-300 rounded bg-sand-50 text-xs font-semibold focus:ring-1 focus:ring-burgundy-800">
+                                <option value="">-- Select Tense --</option>
+                                <option value="hydrate">hydrate</option>
+                                <option value="am hydrating">am hydrating</option>
+                            </select>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-1">
+                            <span>4. At the moment, she (relax) in a hot bath with a book.</span>
+                            <select id="g-4" class="p-2 border border-sand-300 rounded bg-sand-50 text-xs font-semibold focus:ring-1 focus:ring-burgundy-800">
+                                <option value="">-- Select Tense --</option>
+                                <option value="relaxes">relaxes</option>
+                                <option value="is relaxing">is relaxing</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-2">
+                        <span id="grammar-feedback" class="text-sm font-bold text-burgundy-900"></span>
+                        <button onclick="checkGrammarExercises()" class="bg-burgundy-800 hover:bg-burgundy-900 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all shadow-sm">
+                            Check Grammar Answers
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button onclick="switchTab('reading')" class="bg-sand-200 hover:bg-sand-300 text-charcoal px-5 py-2.5 rounded-lg font-medium text-sm transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Previous
+                    </button>
+                    <button onclick="switchTab('speaking')" class="bg-burgundy-900 hover:bg-burgundy-800 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all shadow-sm flex items-center gap-2">
+                        Next: Speaking Practice <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: SPEAKING -->
+        <section id="section-speaking" class="tab-content hidden space-y-8">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-sand-300">
+                <div class="border-b border-sand-200 pb-4 mb-6">
+                    <span class="text-xs uppercase tracking-widest text-burgundy-800 font-bold">Part 6 • 5 Minutes</span>
+                    <h2 class="text-3xl font-serif font-bold text-burgundy-900 mt-1">Guided Speaking Cards</h2>
+                    <p class="text-gray-600 text-sm mt-1">Click through interactive prompt cards to speak out loud about your morning habits using new vocabulary.</p>
+                </div>
+
+                <!-- Speaking Cards Carousel / Box -->
+                <div class="bg-sand-100 p-6 sm:p-10 rounded-2xl border border-sand-300 text-center relative max-w-2xl mx-auto shadow-inner">
+                    <span id="card-counter" class="text-xs uppercase tracking-widest font-bold text-burgundy-800 block mb-2">Card 1 of 4</span>
+                    
+                    <div id="speaking-card-content" class="min-h-[160px] flex flex-col justify-center items-center py-4">
+                        <h3 id="speaking-title" class="text-2xl font-serif font-bold text-burgundy-900 mb-3">
+                            Describe your perfect morning coffee or tea ritual.
+                        </h3>
+                        <p id="speaking-helper" class="text-xs text-gray-600 italic max-w-md">
+                            Useful phrases: "I prefer drinking...", "My morning routine starts with...", "It helps me feel..."
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center gap-4 mt-6">
+                        <button onclick="prevSpeakingCard()" class="bg-white hover:bg-sand-200 border border-sand-300 text-burgundy-900 px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fa-solid fa-chevron-left"></i> Previous Card
+                        </button>
+                        <button onclick="nextSpeakingCard()" class="bg-burgundy-900 hover:bg-burgundy-800 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors shadow-sm">
+                            Next Card <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Audio Recorder / Self-Practice Box -->
+                <div class="bg-sand-50 rounded-xl p-6 border border-sand-200 max-w-2xl mx-auto">
+                    <h4 class="font-serif font-bold text-burgundy-900 mb-2 text-center text-lg">Speaking Check-list</h4>
+                    <ul class="text-xs sm:text-sm text-gray-700 space-y-2 list-disc list-inside">
+                        <li>Used Present Simple for habits ("I usually wake up...")</li>
+                        <li>Used at least two new vocabulary words (hydrated, skincare, cozy, ritual, eye patches)</li>
+                        <li>Spoke with clear pronunciation and natural pause</li>
+                    </ul>
+                </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button onclick="switchTab('grammar')" class="bg-sand-200 hover:bg-sand-300 text-charcoal px-5 py-2.5 rounded-lg font-medium text-sm transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Previous
+                    </button>
+                    <button onclick="switchTab('creative')" class="bg-burgundy-900 hover:bg-burgundy-800 text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all shadow-sm flex items-center gap-2">
+                        Next: Creative Postcard Builder <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: CREATIVE TASK -->
+        <section id="section-creative" class="tab-content hidden space-y-8">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-sand-300">
+                <div class="border-b border-sand-200 pb-4 mb-6">
+                    <span class="text-xs uppercase tracking-widest text-burgundy-800 font-bold">Part 7 • 5 Minutes</span>
+                    <h2 class="text-3xl font-serif font-bold text-burgundy-900 mt-1">Creative Task: Aesthetic Morning Postcard Builder</h2>
+                    <p class="text-gray-600 text-sm mt-1">Design your custom Pinterest-inspired aesthetic postcard and share your personal morning slogan!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <!-- Controls Column -->
+                    <div class="space-y-5 bg-sand-50 p-6 rounded-xl border border-sand-300">
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 border-b border-sand-200 pb-2">
+                            Customize Your Postcard
+                        </h3>
+
+                        <!-- Select Main Photo from user upload list -->
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-burgundy-900 mb-2">1. Choose Aesthetic Image:</label>
+                            <select id="postcard-img-select" onchange="updatePostcard()" class="w-full p-2.5 rounded border border-sand-300 bg-white text-sm focus:ring-1 focus:ring-burgundy-800">
+                                <option value="image_9.png">Hailey Bieber Eye Patches Glow</option>
+                                <option value="image_10.png">Relaxing Bath & Reading</option>
+                                <option value="image_11.png">Cozy Knit Suit & Laptop</option>
+                                <option value="image_13.png">Minimalist Morning Essentials</option>
+                            </select>
+                        </div>
+
+                        <!-- Card Heading / Quote -->
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-burgundy-900 mb-2">2. Morning Slogan / Quote:</label>
+                            <input type="text" id="postcard-quote" oninput="updatePostcard()" value="Slow mornings create intentional days." class="w-full p-2.5 rounded border border-sand-300 text-sm focus:ring-1 focus:ring-burgundy-800">
+                        </div>
+
+                        <!-- Habit Checklist -->
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-burgundy-900 mb-2">3. Three Morning Habits:</label>
+                            <div class="space-y-2">
+                                <input type="text" id="habit-1" oninput="updatePostcard()" value="Drink warm lemon water" class="w-full p-2 rounded border border-sand-300 text-xs">
+                                <input type="text" id="habit-2" oninput="updatePostcard()" value="Apply Rhode hydrating serum" class="w-full p-2 rounded border border-sand-300 text-xs">
+                                <input type="text" id="habit-3" oninput="updatePostcard()" value="Read 10 pages in cozy armchair" class="w-full p-2 rounded border border-sand-300 text-xs">
+                            </div>
+                        </div>
+
+                        <!-- Color Theme Select -->
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-burgundy-900 mb-2">4. Card Border Accent:</label>
+                            <div class="flex gap-3">
+                                <button onclick="setCardBorder('#6b141a')" class="w-8 h-8 rounded-full bg-[#6b141a] border-2 border-white shadow-sm"></button>
+                                <button onclick="setCardBorder('#1a1a1a')" class="w-8 h-8 rounded-full bg-[#1a1a1a] border-2 border-white shadow-sm"></button>
+                                <button onclick="setCardBorder('#c3b299')" class="w-8 h-8 rounded-full bg-[#c3b299] border-2 border-white shadow-sm"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Preview Card Column -->
+                    <div class="flex flex-col items-center">
+                        <span class="text-xs uppercase tracking-widest font-bold text-gray-500 mb-3 block">Live Postcard Preview</span>
+                        
+                        <!-- The Postcard -->
+                        <div id="postcard-canvas" class="w-full max-w-sm bg-sand-100 p-6 rounded-2xl shadow-xl border-4 transition-all duration-300" style="border-color: #6b141a;">
+                            <!-- Header branding -->
+                            <div class="flex justify-between items-center border-b border-sand-300 pb-3 mb-4">
+                                <span class="font-serif italic text-burgundy-900 font-semibold text-sm">With Love, English</span>
+                                <span class="text-[10px] uppercase tracking-widest text-gray-500 font-mono">EST. 2026</span>
+                            </div>
+
+                            <!-- Postcard Image -->
+                            <div class="aspect-[4/3] rounded-lg overflow-hidden mb-4 shadow-sm">
+                                <img id="preview-img" src="/Users/dalizedergausova/Downloads/IMG_9339.JPG" alt="Aesthetic Morning Postcard" class="w-full h-full object-cover">
+                            </div>
+
+                            <!-- Quote -->
+                            <h4 id="preview-quote" class="font-serif font-bold text-lg text-burgundy-900 text-center leading-snug mb-4">
+                                "Slow mornings create intentional days."
+                            </h4>
+
+                            <!-- Habits Checklist -->
+                            <div class="bg-white/80 backdrop-blur p-4 rounded-xl border border-sand-200 text-xs text-gray-800 space-y-2">
+                                <div class="font-bold uppercase text-[10px] tracking-wider text-burgundy-800 mb-1 border-b pb-1">My Morning Rituals</div>
+                                <div class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-burgundy-800"></i> <span id="prev-h1">Drink warm lemon water</span></div>
+                                <div class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-burgundy-800"></i> <span id="prev-h2">Apply Rhode hydrating serum</span></div>
+                                <div class="flex items-center gap-2"><i class="fa-regular fa-circle-check text-burgundy-800"></i> <span id="prev-h3">Read 10 pages in cozy armchair</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Finish Lesson Button -->
+                        <button onclick="finishLesson()" class="mt-8 bg-burgundy-900 hover:bg-burgundy-800 text-white px-8 py-3 rounded-xl font-bold text-base transition-all shadow-lg flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i> Complete & Finish Lesson
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Completion Modal -->
+        <div id="completion-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+            <div class="bg-sand-50 max-w-md w-full rounded-2xl p-8 border-2 border-burgundy-800 text-center shadow-2xl space-y-5">
+                <div class="w-16 h-16 rounded-full bg-burgundy-900 text-white flex items-center justify-center mx-auto text-3xl font-serif">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <h3 class="text-3xl font-serif font-bold text-burgundy-900">Congratulations!</h3>
+                <p class="text-sm text-gray-700">You have successfully completed <strong>Lesson 1: Aesthetic Morning Rituals</strong> from <em>WITH LOVE, ENGLISH</em>.</p>
+                <div class="bg-white p-4 rounded-xl border border-sand-300 text-xs font-mono text-burgundy-900 space-y-1">
+                    <p>✓ Vocabulary Mastered</p>
+                    <p>✓ Reading & Comprehension Done</p>
+                    <p>✓ Grammar Tenses Applied</p>
+                    <p>✓ Postcard Created</p>
+                </div>
+                <button onclick="closeModal()" class="w-full bg-burgundy-900 hover:bg-burgundy-800 text-white py-3 rounded-xl font-semibold text-sm transition-all shadow">
+                    Back to Lesson View
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JavaScript Section -->
+    <script>
+        // Track completed tabs
+        let completedTabs = {
+            warmup: false,
+            vocab: false,
+            practice: false,
+            reading: false,
+            grammar: false,
+            speaking: false,
+            creative: false
+        };
+
+        // Text-To-Speech Pronunciation function
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert('Speech Synthesis is not supported in this browser.');
+            }
+        }
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-button').forEach(el => {
+                el.classList.remove('tab-active');
+                el.classList.add('text-gray-600');
+            });
+
+            document.getElementById('section-' + tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('tab-' + tabId);
+            activeBtn.classList.add('tab-active');
+            activeBtn.classList.remove('text-gray-600');
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Warm-up Mood Selection
+        function selectMood(id) {
+            document.querySelectorAll('.image-card').forEach(el => {
+                el.classList.remove('border-burgundy-800', 'bg-sand-200');
+                el.classList.add('border-transparent');
+            });
+            const selected = document.getElementById('mood-' + id);
+            selected.classList.add('border-burgundy-800', 'bg-sand-200');
+            selected.classList.remove('border-transparent');
+        }
+
+        function markWarmupComplete() {
+            completedTabs.warmup = true;
+            updateOverallProgress();
+            switchTab('vocab');
+        }
+
+        // Word Formation Check
+        function checkWordFormation() {
+            const ans1 = document.getElementById('wf-1').value.trim().toLowerCase();
+            const ans2 = document.getElementById('wf-2').value.trim().toLowerCase();
+            const ans3 = document.getElementById('wf-3').value.trim().toLowerCase();
+
+            let score = 0;
+            if (ans1 === 'hydration') score++;
+            if (ans2 === 'gently') score++;
+            if (ans3 === 'calmness' || ans3 === 'calm') score++;
+
+            const feedback = document.getElementById('wf-feedback');
+            if (score === 3) {
+                feedback.className = 'text-xs font-semibold text-green-700';
+                feedback.innerText = '✓ Excellent! All word formations are correct.';
+                completedTabs.vocab = true;
+                updateOverallProgress();
+            } else {
+                feedback.className = 'text-xs font-semibold text-burgundy-800';
+                feedback.innerText = `Score: ${score}/3. Check spelling (hydration, gently, calmness).`;
+            }
+        }
+
+        // Vocabulary Practice Check
+        function checkPracticeExercises() {
+            let correct = 0;
+            if (document.getElementById('match-1').value === 'patches') correct++;
+            if (document.getElementById('match-2').value === 'suit') correct++;
+            if (document.getElementById('match-3').value === 'water') correct++;
+            if (document.getElementById('match-4').value === 'glow') correct++;
+
+            const b1 = document.getElementById('blank-1').value.trim().toLowerCase();
+            const b2 = document.getElementById('blank-2').value.trim().toLowerCase();
+            const b3 = document.getElementById('blank-3').value.trim().toLowerCase();
+            const b4 = document.getElementById('blank-4').value.trim().toLowerCase();
+
+            if (b1 === 'ritual') correct++;
+            if (b2 === 'patches' || b2 === 'eye patches') correct++;
+            if (b3 === 'cozy') correct++;
+            if (b4 === 'skincare') correct++;
+
+            const feedback = document.getElementById('practice-feedback');
+            if (correct === 8) {
+                feedback.className = 'text-sm font-bold text-green-700';
+                feedback.innerText = '✓ Perfect! 8/8 correct!';
+                completedTabs.practice = true;
+                updateOverallProgress();
+            } else {
+                feedback.className = 'text-sm font-bold text-burgundy-900';
+                feedback.innerText = `Result: ${correct}/8 correct. Keep trying!`;
+            }
+        }
+
+        // Reading Tasks Check
+        let tfState = { 1: null, 2: null, 3: null };
+        function setTF(qNum, value, btnEl) {
+            tfState[qNum] = value;
+            document.querySelectorAll('.tf-btn-' + qNum).forEach(btn => {
+                btn.classList.remove('bg-burgundy-800', 'text-white');
+            });
+            btnEl.classList.add('bg-burgundy-800', 'text-white');
+        }
+
+        function checkReadingTasks() {
+            let score = 0;
+            if (tfState[1] === 'false') score++;
+            if (tfState[2] === 'true') score++;
+            if (tfState[3] === 'false') score++;
+
+            const mcq = document.querySelector('input[name="mcq"]:checked');
+            if (mcq && mcq.value === 'b') score++;
+
+            const feedback = document.getElementById('reading-feedback');
+            if (score === 4) {
+                feedback.className = 'text-sm font-bold text-green-700';
+                feedback.innerText = '✓ Great job! 4/4 correct answers.';
+                completedTabs.reading = true;
+                updateOverallProgress();
+            } else {
+                feedback.className = 'text-sm font-bold text-burgundy-900';
+                feedback.innerText = `Score: ${score}/4. Review the text and re-check.`;
+            }
+        }
+
+        // Grammar Exercises Check
+        function checkGrammarExercises() {
+            let score = 0;
+            if (document.getElementById('g-1').value === 'wakes') score++;
+            if (document.getElementById('g-2').value === 'is sitting') score++;
+            if (document.getElementById('g-3').value === 'hydrate') score++;
+            if (document.getElementById('g-4').value === 'is relaxing') score++;
+
+            const feedback = document.getElementById('grammar-feedback');
+            if (score === 4) {
+                feedback.className = 'text-sm font-bold text-green-700';
+                feedback.innerText = '✓ Perfect Grammar! 4/4 correct.';
+                completedTabs.grammar = true;
+                updateOverallProgress();
+            } else {
+                feedback.className = 'text-sm font-bold text-burgundy-900';
+                feedback.innerText = `Score: ${score}/4. Remember: routines = Present Simple, current actions = Present Continuous.`;
+            }
+        }
+
+        // Speaking Cards Logic
+        const speakingCards = [
+            {
+                title: "1. Describe your perfect morning coffee or tea ritual.",
+                helper: "Useful phrases: 'I prefer drinking...', 'My morning routine starts with...', 'It helps me feel...'"
+            },
+            {
+                title: "2. Do you use any skincare products or eye patches in the morning?",
+                helper: "Useful phrases: 'I apply...', 'I like to hydrate my skin with...', 'It feels very refreshing...'"
+            },
+            {
+                title: "3. What are you wearing right now while studying this lesson?",
+                helper: "Useful phrases: 'Right now, I am wearing...', 'It is very cozy...', 'I am sitting in...'"
+            },
+            {
+                title: "4. What is one habit you want to add to your morning routine?",
+                helper: "Useful phrases: 'I want to start...', 'In the mornings, I plan to...', 'It will make me feel...'"
+            }
+        ];
+        let currentCardIndex = 0;
+
+        function updateSpeakingCard() {
+            const card = speakingCards[currentCardIndex];
+            document.getElementById('card-counter').innerText = `Card ${currentCardIndex + 1} of ${speakingCards.length}`;
+            document.getElementById('speaking-title').innerText = card.title;
+            document.getElementById('speaking-helper').innerText = card.helper;
+        }
+
+        function nextSpeakingCard() {
+            currentCardIndex = (currentCardIndex + 1) % speakingCards.length;
+            updateSpeakingCard();
+            completedTabs.speaking = true;
+            updateOverallProgress();
+        }
+
+        function prevSpeakingCard() {
+            currentCardIndex = (currentCardIndex - 1 + speakingCards.length) % speakingCards.length;
+            updateSpeakingCard();
+        }
+
+        // Creative Postcard Logic
+        function updatePostcard() {
+            const imgVal = document.getElementById('postcard-img-select').value;
+            const quoteVal = document.getElementById('postcard-quote').value;
+            const h1 = document.getElementById('habit-1').value;
+            const h2 = document.getElementById('habit-2').value;
+            const h3 = document.getElementById('habit-3').value;
+
+            document.getElementById('preview-img').src = imgVal;
+            document.getElementById('preview-quote').innerText = quoteVal ? `"${quoteVal}"` : '';
+            document.getElementById('prev-h1').innerText = h1;
+            document.getElementById('prev-h2').innerText = h2;
+            document.getElementById('prev-h3').innerText = h3;
+
+            completedTabs.creative = true;
+            updateOverallProgress();
+        }
+
+        function setCardBorder(colorHex) {
+            document.getElementById('postcard-canvas').style.borderColor = colorHex;
+        }
+
+        // Overall Progress Bar Update
+        function updateOverallProgress() {
+            const total = Object.keys(completedTabs).length;
+            const completedCount = Object.values(completedTabs).filter(Boolean).length;
+            const percentage = Math.round((completedCount / total) * 100);
+
+            document.getElementById('overall-progress-bar').style.width = percentage + '%';
+            document.getElementById('overall-progress-text').innerText = percentage + '%';
+        }
+
+        // Completion Modal Logic
+        function finishLesson() {
+            document.getElementById('completion-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('completion-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
